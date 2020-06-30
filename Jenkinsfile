@@ -5,8 +5,8 @@ pipeline {
     dockerImage = ""
   }
 
-  agent any
-
+  agent { label 'kubepod' }
+ 
   stages {
 
     stage('Checkout Source') {
