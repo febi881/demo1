@@ -2,7 +2,6 @@ pipeline {
 
   environment {
     registry = "192.168.17.150:5000/aryimg/web1"
-    registryCredential = 'dockerhub'
     dockerImage = ""
   }
 
@@ -27,7 +26,7 @@ pipeline {
     stage('Push Image') {
       steps{
         script {
-          docker.withRegistry( '', registryCredential ) {
+          docker.withRegistry( "" ) {
             dockerImage.push()
           }
         }
