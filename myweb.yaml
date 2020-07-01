@@ -1,3 +1,4 @@
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -15,7 +16,7 @@ spec:
         app: myweb
     spec:
       containers:
-      - image: 192.168.17.150:5000/aryimg/web1:7
+      - image: 192.168.17.150:5000/aryimg/web1:9
         imagePullPolicy: Always
         name: myweb
 
