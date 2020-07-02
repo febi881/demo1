@@ -1,7 +1,7 @@
 pipeline {
   
   environment {
-    registry = "192.168.17.150:5000/aryimg/web1"
+    registry = "192.168.17.136:5000/aryimg/web1"
     dockerImage = ""
   }
   agent { label 'kubepod' }
