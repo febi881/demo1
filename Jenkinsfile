@@ -1,12 +1,12 @@
 pipeline {
+  
+  agent { label 'kubepod' }
 
   environment {
     registry = "192.168.17.150:5000/aryimg/web1"
     dockerImage = ""
   }
 
-  agent { label 'kubepod' }
- 
   stages {
 
     stage('Checkout Source') {
