@@ -3,7 +3,7 @@ pipeline {
   
   agent {
         docker {
-            label 'slave-docker'
+            label 'kubepod'
             image 'jnlp-slave'
         }
   }
