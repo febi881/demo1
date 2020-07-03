@@ -13,7 +13,7 @@ pipeline {
       steps {
         git 'https://github.com/febi881/demo1.git'
       }
-    
+    }
     stage('Build image') {
       steps{
         script {
