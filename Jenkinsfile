@@ -4,17 +4,16 @@ pipeline {
     registry = "192.168.17.150:5000/aryimg/web1"
     dockerImage = ""
   }
+  
+  agent { label 'kubepod' }
 
   stages {
   
-    agent {  docker { image 'golang' } }
-           
     stage('Checkout Source') {
       steps {
         git 'https://github.com/febi881/demo1.git'
       }
-    }
-
+    
     stage('Build image') {
       steps{
         script {
