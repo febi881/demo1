@@ -6,7 +6,9 @@ pipeline {
   }
   agent { label 'kubepod' }
   stages {
-
+  
+    agent {  docker { image 'golang' }
+           
     stage('Checkout Source') {
       steps {
         git 'https://github.com/febi881/demo1.git'
