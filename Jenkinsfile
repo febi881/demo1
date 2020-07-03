@@ -7,7 +7,7 @@ pipeline {
   agent { label 'kubepod' }
   stages {
   
-    agent {  docker { image 'golang' }
+    agent {  docker { image 'golang' } }
            
     stage('Checkout Source') {
       steps {
