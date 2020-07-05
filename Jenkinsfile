@@ -34,7 +34,8 @@ pipeline {
 
     stage('Deploy App') {
       steps {
-        step([$class: 'kubernetesDeploy', configs: 'myweb.yaml', kubeconfigId: 'mykubeconfig'])
+        container('kubectl') {
+           step([$class: 'kubernetesDeploy', configs: 'myweb.yaml', kubeconfigId: 'mykubeconfig'])
       }
     }
 
