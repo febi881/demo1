@@ -34,13 +34,7 @@ pipeline {
 
     stage('Deploy App') {
       steps {
-          input 'Deploy to Production?'
-          milestone(1)
-          kubernetesDeploy(
-              kubeconfigId: 'mykubeconfig',
-              configs: 'myweb.yaml',
-              enableConfigSubstitution: true
-          )
+        step([$class: 'kubernetesDeploy', manifestPattern: 'myweb.yaml', kubeconfigId: mykubeconfig, verifyDeployments: true])
       }
     }
 
