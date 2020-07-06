@@ -38,7 +38,7 @@ pipeline {
        //   withKubeConfig([credentialsId: 'mykubeconfig']) {
        //   sh 'kubectl apply -f myweb.yaml'
           kubernetesDeploy(configs: "myweb.yaml", kubeconfigId: "mykubeconfig")
-        }
+       // }
       }
     }
 
