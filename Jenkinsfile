@@ -34,6 +34,8 @@ pipeline {
 
     stage('Deploy App') {
       steps {
+          input 'Deploy to Production?'
+          milestone(1)
        //  step([$class: 'kubernetesDeploy', configs: 'myweb.yaml', kubeconfigId: 'mykubeconfig'])
        //   withKubeConfig([credentialsId: 'mykubeconfig']) {
        //   sh 'kubectl apply -f myweb.yaml'
