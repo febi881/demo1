@@ -5,8 +5,13 @@ pipeline {
     dockerImage = ""
   }
   
-  agent any
-
+  //agent any
+    agent {
+        docker {
+            label 'slave-docker'
+            image 'jnlp-slave'
+        }
+    }
   stages {
   
     stage('Checkout Source') {
